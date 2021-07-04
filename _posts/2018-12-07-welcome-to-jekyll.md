@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Welcome to Jekyll!
+title: Welcome to limdongkyu!
 subheading: A awesome static site generator.
-author: Jeffrey
+author: limdongkyu
 categories: jekyll
 banner:
   video: https://vjs.zencdn.net/v/oceans.mp4
