@@ -6,7 +6,7 @@
 {%- include functions.html func='get_value' default=true -%}
 {%- assign header_transparent = return -%}
 
-{%- if has_banner and header_transparent -%}
+{%- if header_transparent and (has_banner or page.layout == "landing") -%}
   {%- assign header_transparent_class = "site-header-transparent" -%}
 {%- endif -%}
 
@@ -36,7 +36,7 @@
             {%- for path in page_paths -%}
               {%- assign my_page = site.pages | where: "path", path | first -%}
               {%- if my_page.title -%}
-              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | upcase | escape }}</a>
+              <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
               {%- endif -%}
             {%- endfor -%}
 
@@ -88,4 +88,16 @@
 
     storeScrollData();
   })();
+
+// 랜딩 페이지: 스크롤 시 헤더 배경 표시 (히어로 위에서는 transparent 유지)
+(function() {
+  if (!document.querySelector('.landing-hero')) return;
+  var docEl = document.documentElement;
+  function updateLandingHeader() {
+    var y = window.pageYOffset || docEl.scrollTop;
+    docEl.setAttribute('data-header-transparent', y < 120 ? '' : null);
+  }
+  window.addEventListener('scroll', updateLandingHeader);
+  updateLandingHeader();
+})();
 </script>

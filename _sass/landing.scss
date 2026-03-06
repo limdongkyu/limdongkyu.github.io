@@ -1,0 +1,474 @@
+/**
+ * papaStudio 랜딩 페이지 전용 스타일
+ */
+
+$landing-hero-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+$landing-dark-bg: #16213e;
+$landing-section-bg: rgba(0, 0, 0, 0.02);
+$landing-card-border: rgba(0, 0, 0, 0.08);
+
+/* =====================
+   히어로 섹션
+   ===================== */
+.landing-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.landing-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: $landing-hero-bg;
+  z-index: 0;
+}
+
+.landing-hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(99, 179, 237, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.landing-hero .wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-hero__inner {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.landing-hero__badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.landing-hero__title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing-hero__tagline {
+  font-size: 1.2rem;
+  opacity: 0.75;
+  margin-bottom: 2.25rem;
+  font-weight: 400;
+}
+
+.landing-hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.landing-hero__cta {
+  display: inline-block;
+  padding: 0.85rem 1.85rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.975rem;
+  transition: all 0.2s;
+}
+
+.landing-hero__cta--primary {
+  background: $brand-color;
+  color: #fff;
+  border: 2px solid $brand-color;
+
+  &:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+.landing-hero__cta--secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+/* =====================
+   랜딩 메인 레이아웃
+   ===================== */
+.landing-content {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+
+.wrapper--landing {
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =====================
+   섹션 공통
+   ===================== */
+.landing-section {
+  margin-bottom: 4.5rem;
+}
+
+.landing-section__title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.landing-section__lead {
+  color: $text-color;
+  opacity: 0.72;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+/* =====================
+   서비스 카드
+   ===================== */
+.landing-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.landing-card {
+  padding: 1.5rem;
+  border: 1px solid $landing-card-border;
+  border-radius: 12px;
+  background: $landing-section-bg;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-card:hover {
+  border-color: rgba(15, 52, 96, 0.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  transform: translateY(-3px);
+}
+
+.landing-card__icon {
+  display: block;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.landing-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.landing-card__text {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.78;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.landing-card__cta {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $brand-color;
+}
+
+/* =====================
+   성과 섹션 (다크 배경)
+   ===================== */
+.landing-section--outcomes {
+  background: $landing-dark-bg;
+  color: #f1f1f1;
+  padding: 3.5rem 2.5rem;
+  border-radius: 20px;
+  margin-bottom: 4.5rem;
+
+  .landing-section__title {
+    color: #fff;
+    margin-bottom: 0.6rem;
+  }
+
+  .landing-section__lead {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.landing-outcomes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.landing-outcome {
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.landing-outcome__num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.65rem;
+}
+
+.landing-outcome__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.landing-outcome__text {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* =====================
+   왜 papaStudio 섹션
+   ===================== */
+.landing-why {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.landing-why__item {
+  padding: 1.5rem;
+  border: 1px solid $landing-card-border;
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: rgba(15, 52, 96, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transform: translateY(-3px);
+  }
+}
+
+.landing-why__title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: $brand-color;
+}
+
+.landing-why__text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.78;
+}
+
+/* =====================
+   FAQ 섹션
+   ===================== */
+.landing-section--faq {
+  background: $landing-section-bg;
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  border: 1px solid $landing-card-border;
+}
+
+.landing-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.landing-faq__item {
+  padding: 1.35rem 1.5rem;
+  background: #fff;
+  border: 1px solid $landing-card-border;
+  border-radius: 10px;
+}
+
+.landing-faq__q {
+  font-size: 0.975rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.landing-faq__a {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* =====================
+   CTA 섹션
+   ===================== */
+.landing-section--cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+  border-radius: 20px;
+  color: #fff;
+  margin-bottom: 0;
+
+  .landing-section__title {
+    color: #fff;
+  }
+
+  .landing-section__lead {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.landing-cta-button {
+  display: inline-block;
+  padding: 0.9rem 2.25rem;
+  background: #fff;
+  color: $brand-color;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: opacity 0.2s, transform 0.15s;
+
+  &:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: $brand-color;
+  }
+}
+
+/* =====================
+   푸터
+   ===================== */
+.site-footer--papa .site-footer-inner {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.site-footer--papa .site-footer-brand {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.site-footer--papa .site-footer-desc {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+/* =====================
+   소개 페이지 (about)
+   ===================== */
+.about-page {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.about-lead {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.about-section {
+  margin-bottom: 2rem;
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+
+  a {
+    color: $brand-color;
+  }
+}
+
+/* =====================
+   다크 모드
+   ===================== */
+html[data-theme="dark"] {
+  .landing-hero__bg {
+    background: linear-gradient(135deg, #0d0d14 0%, #12121f 50%, #0a0e1a 100%);
+  }
+
+  .landing-card,
+  .landing-why__item {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .landing-section--faq {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .landing-faq__item {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f1f1f1;
+  }
+
+  .landing-faq__q {
+    color: #f1f1f1;
+  }
+
+  .landing-faq__a {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+  }
+}

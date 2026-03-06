@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="ko"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="ko" /><updated>2026-03-06T16:36:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">papaStudio</title><subtitle>웹·앱 서비스 전문 개발사 papaStudio. AI, WEB, APP 개발 및 IT 컨설팅, 서비스 기획·제작에 특화된 스튜디오입니다.</subtitle><author><name>papaStudio</name></author><entry><title type="html">Python url Encode</title><link href="http://localhost:4000/python/2021/07/05/pyhton-url-encode.html" rel="alternate" type="text/html" title="Python url Encode" /><published>2021-07-05T00:00:00+09:00</published><updated>2021-07-05T00:00:00+09:00</updated><id>http://localhost:4000/python/2021/07/05/pyhton-url-encode</id><content type="html" xml:base="http://localhost:4000/python/2021/07/05/pyhton-url-encode.html"><![CDATA[<p>가끔 url 만들 때 파일명의 공백이나 args 에 한글로 인해 삽질할때 사용되어 진다.</p>
+
+<h2 id="section-1">section 1</h2>
+
+<h3 id="example-for-python">example for python</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">urllib.parse</span> <span class="kn">import</span> <span class="n">urlsplit</span><span class="p">,</span> <span class="n">quote</span><span class="p">,</span> <span class="n">urlparse</span><span class="p">,</span> <span class="n">parse_qs</span><span class="p">,</span> <span class="n">urlencode</span>
+<span class="kn">from</span> <span class="n">urllib.request</span> <span class="kn">import</span> <span class="n">Request</span><span class="p">,</span> <span class="n">urlopen</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sh">'</span><span class="s">https://limdongkyu.github.io/api/test?name=브라이언&amp;greet=하잉~</span><span class="sh">'</span>
+<span class="n">url_info</span> <span class="o">=</span> <span class="nf">urlsplit</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">url_info</span><span class="p">)</span>
+
+<span class="n">encoded_url</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">url_info</span><span class="p">.</span><span class="n">scheme</span><span class="si">}</span><span class="s">://</span><span class="si">{</span><span class="n">url_info</span><span class="p">.</span><span class="n">netloc</span><span class="si">}{</span><span class="nf">quote</span><span class="p">(</span><span class="n">url_info</span><span class="p">.</span><span class="n">path</span><span class="p">)</span><span class="si">}</span><span class="sh">'</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">encoded_url</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">url_info</span><span class="p">.</span><span class="n">query</span><span class="p">:</span>
+    <span class="n">enc_params</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nf">quote</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])),</span> <span class="nf">parse_qs</span><span class="p">(</span><span class="n">url_info</span><span class="p">.</span><span class="n">query</span><span class="p">).</span><span class="nf">items</span><span class="p">()))</span>
+    <span class="n">encoded_url</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">'</span><span class="si">{</span><span class="n">encoded_url</span><span class="si">}</span><span class="s">?</span><span class="si">{</span><span class="nf">urlencode</span><span class="p">(</span><span class="n">enc_params</span><span class="p">)</span><span class="si">}</span><span class="sh">'</span>
+
+<span class="n">req</span> <span class="o">=</span> <span class="nc">Request</span><span class="p">(</span><span class="n">encoded_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">User-Agent</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Mozilla/5.0</span><span class="sh">'</span><span class="p">})</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nf">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">res</span><span class="p">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">성공</span><span class="sh">'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">실패코드 </span><span class="si">{</span><span class="n">res</span><span class="p">.</span><span class="n">status</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
+</code></pre></div></div>]]></content><author><name>limdongkyu</name></author><category term="python" /><category term="python" /><summary type="html"><![CDATA[가끔 url 만들 때 파일명의 공백이나 args 에 한글로 인해 삽질할때 사용되어 진다.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://bit.ly/3xTmdUP" /><media:content medium="image" url="https://bit.ly/3xTmdUP" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Welcome to limdongkyu!</title><link href="http://localhost:4000/jekyll/2021/07/04/welcome-to-limdongkyu.html" rel="alternate" type="text/html" title="Welcome to limdongkyu!" /><published>2021-07-04T00:00:00+09:00</published><updated>2021-07-04T00:00:00+09:00</updated><id>http://localhost:4000/jekyll/2021/07/04/welcome-to-limdongkyu</id><content type="html" xml:base="http://localhost:4000/jekyll/2021/07/04/welcome-to-limdongkyu.html"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+
+<p>To add new posts, simply add a file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory that follows the convention <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+
+<h2 id="section-1">section 1</h2>
+
+<p>Jekyll also offers powerful support for code snippets:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+
+<h2 id="section-2">section 2</h2>
+
+<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+
+<p>$ a * b = c ^ b $</p>
+
+<p>$ 2^{\frac{n-1}{3}} $</p>
+
+<p>$ \int_a^b f(x)\,dx. $</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello World!"</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// prints 'Hi, Tom' to STDOUT.</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="sh">"</span><span class="s">John</span><span class="sh">"</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">age</span><span class="p">)</span>
+</code></pre></div></div>]]></content><author><name>limdongkyu</name></author><category term="jekyll" /><category term="jekyll" /><category term="theme" /><category term="yat" /><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry></feed>

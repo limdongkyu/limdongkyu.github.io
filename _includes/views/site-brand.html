@@ -1,4 +1,7 @@
-<a class="site-brand-inner" rel="author" href="{{ "/" | relative_url }}">
-  <img class="site-favicon" title="{{ site.title | escape }}" src="{{ site.favicon }}" onerror="this.style.display='none'">
-  {{ site.title | escape }}
+<a class="site-brand-inner site-brand-inner--papa" rel="author" href="{{ "/" | relative_url }}">
+  {%- assign logo_src = site.logo | default: site.favicon -%}
+  {%- if logo_src and logo_src != "" -%}
+    <img class="site-favicon site-logo" title="{{ site.title | escape }}" src="{{ logo_src | relative_url }}" alt="{{ site.title | escape }} 로고">
+  {%- endif -%}
+  <span class="site-brand-text">{{ site.title | escape }}</span>
 </a>

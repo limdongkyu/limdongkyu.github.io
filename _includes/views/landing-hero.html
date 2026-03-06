@@ -1,0 +1,21 @@
+{%- assign name = 'heading' -%}
+{%- include functions.html func='get_value' -%}
+{%- assign hero_heading = return | default: site.title -%}
+{%- assign name = 'subheading' -%}
+{%- include functions.html func='get_value' -%}
+{%- assign hero_subheading = return -%}
+
+<section class="landing-hero" role="banner">
+  <div class="landing-hero__bg"></div>
+  <div class="wrapper">
+    <div class="landing-hero__inner">
+      <span class="landing-hero__badge">AI · WEB · APP 전문 개발사</span>
+      <h1 class="landing-hero__title">{{ hero_heading | escape }}</h1>
+      <p class="landing-hero__tagline">{{ hero_subheading | default: "기획부터 개발, 배포까지 — 한 팀이 책임집니다" | escape }}</p>
+      <div class="landing-hero__actions">
+        <a href="{{ '/about.html' | relative_url }}" class="landing-hero__cta landing-hero__cta--primary">프로젝트 문의하기</a>
+        <a href="#services" class="landing-hero__cta landing-hero__cta--secondary">서비스 살펴보기</a>
+      </div>
+    </div>
+  </div>
+</section>
