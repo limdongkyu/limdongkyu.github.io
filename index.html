@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>papaStudio | 웹·앱 서비스 전문 개발사 papaStudio. AI, WEB, APP 개발 및 IT 컨설팅, 서비스 기획·제작에 특화된 스튜디오입니다.</title>
+<meta name="generator" content="Jekyll v4.4.1">
+<meta property="og:title" content="papaStudio">
+<meta name="author" content="papaStudio">
+<meta property="og:locale" content="ko">
+<meta name="description" content="웹·앱 서비스 전문 개발사 papaStudio. AI, WEB, APP 개발 및 IT 컨설팅, 서비스 기획·제작에 특화된 스튜디오입니다.">
+<meta property="og:description" content="웹·앱 서비스 전문 개발사 papaStudio. AI, WEB, APP 개발 및 IT 컨설팅, 서비스 기획·제작에 특화된 스튜디오입니다.">
+<link rel="canonical" href="https://limdongkyu.github.io//">
+<meta property="og:url" content="https://limdongkyu.github.io//">
+<meta property="og:site_name" content="papaStudio">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="papaStudio">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"papaStudio"},"description":"웹·앱 서비스 전문 개발사 papaStudio. AI, WEB, APP 개발 및 IT 컨설팅, 서비스 기획·제작에 특화된 스튜디오입니다.","headline":"papaStudio","name":"papaStudio","url":"https://limdongkyu.github.io//"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-noto-sans@0.0.72/index.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script src="/assets/js/main.js"></script><link type="application/atom+xml" rel="alternate" href="https://limdongkyu.github.io//feed.xml" title="papaStudio">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/languages/go.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// Init highlight js
+document.addEventListener('DOMContentLoaded', function(event) {
+  var els = document.querySelectorAll('pre code')
+
+  function addLangData(block) {
+    var outer = block.parentElement.parentElement.parentElement;
+    var lang = block.getAttribute('data-lang');
+    for (var i = 0; i < outer.classList.length; i++) {
+      var cls = outer.classList[i];
+      if (cls.startsWith('language-')) {
+        lang = cls;
+        break;
+      }
+    }
+    if (!lang) {
+      cls = block.getAttribute('class');
+      lang = cls ? cls.replace('hljs ', '') : '';
+    }
+    if (lang.startsWith('language-')) {
+      lang = lang.substr(9);
+    }
+    block.setAttribute('class', 'hljs ' + lang);
+    block.parentNode.setAttribute('data-lang', lang);
+  }
+
+  function addBadge(block) {
+    var enabled = ('true' || 'true').toLowerCase();
+    if (enabled == 'true') {
+      var pre = block.parentElement;
+      pre.classList.add('badge');
+    }
+  }
+
+  function handle(block) {
+    addLangData(block);
+    addBadge(block)
+    hljs.highlightBlock(block);
+  }
+
+  for (var i = 0; i < els.length; i++) {
+    var el = els[i];
+    handle(el);
+  }
+});
+</script>
+
+<style>
+  /* code language badge */
+  pre.badge::before {
+    content: attr(data-lang);
+    color: #fff;
+    background-color: #ff4e00;
+    padding: 0 .5em;
+    border-radius: 0 2px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 32px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+  }
+
+  /* fix wrong badge display for firefox browser */
+  code > table pre::before {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="site-header site-header-transparent" role="banner">
+
+  <div class="wrapper">
+    <div class="site-header-inner">
+<span class="site-brand"><a class="site-brand-inner site-brand-inner--papa" rel="author" href="/"><span class="site-brand-text">papaStudio</span>
+</a>
+</span><nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger">
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+<a class="page-link" href="/">papaStudio</a><a class="page-link" href="/about.html">소개</a>
+
+
+
+
+<span class="page-link">
+
+<div id="google_translate_element" style="display: none;">
+</div>
+
+<span class="ct-language">
+  <ul class="list-unstyled ct-language-dropdown">
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="en">
+          
+          <img src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png" title="English">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="fr">
+          
+          <img src="https://cdn.countryflags.com/thumbs/france/flag-400.png" title="French">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="zh-CN">
+          
+          <img src="https://cdn.countryflags.com/thumbs/china/flag-400.png" title="Chinese(Simple)">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ja">
+          
+          <img src="https://cdn.countryflags.com/thumbs/japan/flag-400.png" title="Japanese">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ko">
+          
+          <img src="https://cdn.countryflags.com/thumbs/south-korea/flag-400.png" title="Korean">
+          
+        </a>
+      </li>
+    
+      <li>
+        <a href="#" class="lang-select" data-lang="ru">
+          
+          <img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" title="Russian">
+          
+        </a>
+      </li>
+    
+  </ul>
+</span>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: '',
+    autoDisplay: false,
+    layout: google.translate.TranslateElement.InlineLayout.VERTICAL
+  }, 'google_translate_element');
+
+  function restoreLang() {
+    var iframe = document.getElementsByClassName('goog-te-banner-frame')[0];
+    if (!iframe) return;
+
+    var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+    var restore_el = innerDoc.getElementsByTagName("button");
+
+    for (var i = 0; i < restore_el.length; i++) {
+      if (restore_el[i].id.indexOf("restore") >= 0) {
+        restore_el[i].click();
+        var close_el = innerDoc.getElementsByClassName("goog-close-link");
+        close_el[0].click();
+        return;
+      }
+    }
+  }
+
+  function triggerHtmlEvent(element, eventName) {
+    var event;
+    if (document.createEvent) {
+      event = document.createEvent('HTMLEvents');
+      event.initEvent(eventName, true, true);
+      element.dispatchEvent(event);
+    } else {
+      event = document.createEventObject();
+      event.eventType = eventName;
+      element.fireEvent('on' + event.eventType, event);
+    }
+  }
+
+  var googleCombo = document.querySelector("select.goog-te-combo");
+  var langSelect = document.querySelector('.ct-language');
+  langSelect.addEventListener('click', function(event) {
+    if (!event.target) {
+      return;
+    }
+
+    var selected = document.querySelector('.ct-language .ct-language-selected');
+    if (selected) {
+      selected.classList.remove('ct-language-selected');
+    }
+
+    var target = event.target;
+    while (target && target !== langSelect ) {
+      if (target.matches('.lang-select')) {
+        break;
+      }
+      target = target.parentElement;
+    }
+
+    if (target && target.matches('.lang-select')) {
+      var lang = target.getAttribute('data-lang');
+      if (googleCombo.value == lang) {
+        restoreLang();
+      } else {
+        target.parentElement.classList.add('ct-language-selected');
+        googleCombo.value = lang;
+        triggerHtmlEvent(googleCombo, 'change');
+      }
+    }
+
+    event.preventDefault();
+  });
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</span>
+</div>
+        </nav>
+</div>
+  </div>
+</header>
+
+<script>
+  (function() {
+    var lastScrollY = getScrollPos().y;
+    var documentElement = document.documentElement;
+
+    function storeScrollData() {
+      var y = getScrollPos().y;var scrollStatus = "";
+
+      if (y <= 0) {
+        scrollStatus = "top";
+      } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
+        scrollStatus = "bottom";
+      } else {
+        var isScrollDown = (y - lastScrollY > 0) ? true : false;
+        scrollStatus = isScrollDown ? "down" : "up";
+      }
+
+      lastScrollY = y;
+      documentElement.setAttribute("data-scroll-status", scrollStatus);
+    }
+
+    window.addEventListener('scroll', function(e) {
+      storeScrollData();
+    });
+
+    storeScrollData();
+  })();
+
+// 랜딩 페이지: 스크롤 시 헤더 배경 표시 (히어로 위에서는 transparent 유지)
+(function() {
+  if (!document.querySelector('.landing-hero')) return;
+  var docEl = document.documentElement;
+  function updateLandingHeader() {
+    var y = window.pageYOffset || docEl.scrollTop;
+    docEl.setAttribute('data-header-transparent', y < 120 ? '' : null);
+  }
+  window.addEventListener('scroll', updateLandingHeader);
+  updateLandingHeader();
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+<section class="landing-hero" role="banner">
+  <div class="landing-hero__bg"></div>
+  <div class="wrapper">
+    <div class="landing-hero__inner">
+      <span class="landing-hero__badge">AI · WEB · APP 전문 개발사</span>
+      <h1 class="landing-hero__title">비즈니스 성장을 이끄는 AI · WEB · APP 개발</h1>
+      <p class="landing-hero__tagline">기획부터 개발, 배포까지 — 한 팀이 책임집니다</p>
+      <div class="landing-hero__actions">
+        <a href="/about.html" class="landing-hero__cta landing-hero__cta--primary">프로젝트 문의하기</a>
+        <a href="#services" class="landing-hero__cta landing-hero__cta--secondary">서비스 살펴보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function hashLocate(hashValue) {
+    hashValue = hashValue.replace(/^.*#h-/, '');
+    hashValue = decodeURIComponent(hashValue);
+    var element = document.getElementById(hashValue);
+
+    if (!element) {
+      return;
+    }
+
+    var header = document.querySelector('header.site-header');
+    var headerRect = header.getBoundingClientRect();
+    var headerTop = Math.floor(headerRect.top);
+    var headerHeight = Math.floor(headerRect.height);
+    var scrollPos = getScrollPos();
+    var offsetY = element.offsetTop - (headerTop + headerHeight + 20);
+
+    if (offsetY == scrollPos.y) {
+      return;
+    }
+
+    if (headerTop == 0  && offsetY > scrollPos.y) {
+      offsetY += headerHeight + 2;
+    } else if (headerTop < 0  && offsetY < scrollPos.y) {
+      offsetY -= headerHeight - 2;
+    }
+
+    smoothScrollTo(offsetY);
+  }
+
+  // The first event occurred
+  window.addEventListener('load', function(event) {
+    if (window.location.hash) {
+      hashLocate(window.location.hash);
+    }
+  });
+
+  // The first event occurred
+  window.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() == 'a') {
+      hashLocate(event.target.getAttribute('href'));
+    }
+  });
+</script>
+<div class="theme-toggle">
+  <input type="checkbox" id="theme-switch">
+  <label for="theme-switch">
+    <div class="toggle"></div>
+    <div class="names">
+      <p class="light">Light</p>
+      <p class="dark">Dark</p>
+    </div>
+  </label>
+</div>
+
+
+
+
+<script>
+  (function() {
+    var sw = document.getElementById('theme-switch');
+    var html = document.getElementsByTagName('html')[0];
+    var nightModeOption = ('auto' || 'auto').toLowerCase();
+    var storage = nightModeOption === 'manual'
+        ? localStorage
+        : sessionStorage;
+    var themeData = loadThemeData();
+
+    function saveThemeData(data) {
+      storage.setItem('theme', JSON.stringify(data));
+    }
+
+    function loadThemeData() {
+      var data = storage.getItem('theme');
+      try {
+        data = JSON.parse(data ? data : '');
+      } catch(e) {
+        data = { nightShift: undefined, autoToggleAt: 0 };
+        saveThemeData(data);
+      }
+      return data;
+    }
+
+    function handleThemeToggle(nightShift) {
+      themeData.nightShift = nightShift;
+      saveThemeData(themeData);
+      html.dataset.theme = nightShift ? 'dark' : 'light';
+      setTimeout(function() {
+        sw.checked = nightShift ? true : false;
+      }, 50);
+    }
+
+    function autoThemeToggle() {
+      // Next time point of theme toggle
+      var now = new Date();
+      var toggleAt = new Date();
+      var hours = now.getHours();
+      var nightShift = hours >= 19 || hours <=7;
+
+      if (nightShift) {
+        if (hours > 7) {
+          toggleAt.setDate(toggleAt.getDate() + 1);
+        }
+        toggleAt.setHours(7);
+      } else {
+        toggleAt.setHours(19);
+      }
+
+      toggleAt.setMinutes(0);
+      toggleAt.setSeconds(0);
+      toggleAt.setMilliseconds(0)
+
+      var delay = toggleAt.getTime() - now.getTime();
+
+      // auto toggle theme mode
+      setTimeout(function() {
+        handleThemeToggle(!nightShift);
+      }, delay);
+
+      return {
+        nightShift: nightShift,
+        toggleAt: toggleAt.getTime()
+      };
+    }
+
+    // Listen the theme toggle event
+    sw.addEventListener('change', function(event) {
+      handleThemeToggle(event.target.checked);
+    });
+
+    if (nightModeOption == 'auto') {
+      var data = autoThemeToggle();
+
+      // Toggle theme by local setting
+      if (data.toggleAt > themeData.autoToggleAt) {
+        themeData.autoToggleAt = data.toggleAt;
+        handleThemeToggle(data.nightShift);
+      } else {
+        handleThemeToggle(themeData.nightShift);
+      }
+    } else if (nightModeOption == 'manual') {
+      handleThemeToggle(themeData.nightShift);
+    } else {
+      var nightShift = themeData.nightShift;
+      if (nightShift === undefined) {
+        nightShift = nightModeOption === 'on';
+      }
+      handleThemeToggle(nightShift);
+    }
+  })();
+</script>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="landing-content wrapper wrapper--landing">
+  <section class="landing-section landing-section--services" id="services">
+  <h2 class="landing-section__title">서비스</h2>
+  <p class="landing-section__lead">웹·앱 서비스 기획부터 개발, 배포까지 한 곳에서 제공합니다.</p>
+  <ul class="landing-cards">
+    <li class="landing-card">
+      <span class="landing-card__icon" aria-hidden="true">🌐</span>
+      <h3 class="landing-card__title">WEB 개발</h3>
+      <p class="landing-card__text">반응형 웹, 웹앱, 프로덕트 대시보드 등 맞춤 웹 서비스 구축</p>
+    </li>
+    <li class="landing-card">
+      <span class="landing-card__icon" aria-hidden="true">📱</span>
+      <h3 class="landing-card__title">APP 개발</h3>
+      <p class="landing-card__text">iOS / Android 네이티브 및 크로스플랫폼 앱 개발</p>
+    </li>
+    <li class="landing-card">
+      <span class="landing-card__icon" aria-hidden="true">🤖</span>
+      <h3 class="landing-card__title">AI 연동</h3>
+      <p class="landing-card__text">LLM·AI API 연동, 챗봇, 자동화 및 데이터 파이프라인</p>
+    </li>
+    <li class="landing-card">
+      <span class="landing-card__icon" aria-hidden="true">💡</span>
+      <h3 class="landing-card__title">IT 컨설팅</h3>
+      <p class="landing-card__text">기술 스택 선정, 아키텍처 설계, MVP 기획 및 검증</p>
+    </li>
+  </ul>
+</section>
+
+<section class="landing-section landing-section--outcomes" id="outcomes">
+  <h2 class="landing-section__title">papaStudio와 함께하면</h2>
+  <p class="landing-section__lead">비즈니스 목표에 직결되는 결과를 만들어냅니다.</p>
+  <div class="landing-outcomes">
+    <div class="landing-outcome">
+      <div class="landing-outcome__num">01</div>
+      <h3 class="landing-outcome__title">빠른 시장 진입</h3>
+      <p class="landing-outcome__text">MVP 설계부터 배포까지 최단 경로로 서비스를 출시합니다.</p>
+    </div>
+    <div class="landing-outcome">
+      <div class="landing-outcome__num">02</div>
+      <h3 class="landing-outcome__title">검증된 기술 스택</h3>
+      <p class="landing-outcome__text">프로젝트에 최적화된 기술을 선정해 유지보수 비용을 최소화합니다.</p>
+    </div>
+    <div class="landing-outcome">
+      <div class="landing-outcome__num">03</div>
+      <h3 class="landing-outcome__title">AI로 경쟁 우위 확보</h3>
+      <p class="landing-outcome__text">LLM과 자동화를 서비스에 녹여 차별화된 사용자 경험을 제공합니다.</p>
+    </div>
+    <div class="landing-outcome">
+      <div class="landing-outcome__num">04</div>
+      <h3 class="landing-outcome__title">지속 가능한 성장</h3>
+      <p class="landing-outcome__text">확장 가능한 아키텍처로 비즈니스 성장에 맞춰 서비스를 키워갑니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--why" id="why">
+  <h2 class="landing-section__title">왜 papaStudio인가</h2>
+  <p class="landing-section__lead">단순 외주가 아닌 진짜 파트너로 함께합니다.</p>
+  <div class="landing-why">
+    <div class="landing-why__item">
+      <h3 class="landing-why__title">전략 우선</h3>
+      <p class="landing-why__text">개발 전에 비즈니스 목표와 기술 아키텍처를 먼저 정의합니다. 방향이 맞아야 코드도 빛납니다.</p>
+    </div>
+    <div class="landing-why__item">
+      <h3 class="landing-why__title">스타트업 속도</h3>
+      <p class="landing-why__text">불필요한 프로세스 없이 빠르게 실행합니다. 결정은 빠르게, 결과는 확실하게.</p>
+    </div>
+    <div class="landing-why__item">
+      <h3 class="landing-why__title">풀스택 원팀</h3>
+      <p class="landing-why__text">기획, 디자인, 개발, AI 연동까지 한 팀이 처음부터 끝까지 담당합니다.</p>
+    </div>
+    <div class="landing-why__item">
+      <h3 class="landing-why__title">진짜 파트너십</h3>
+      <p class="landing-why__text">납품 후 사라지지 않습니다. 서비스가 성장하는 동안 함께 고민합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--faq" id="faq">
+  <h2 class="landing-section__title">자주 묻는 질문</h2>
+  <div class="landing-faq">
+    <div class="landing-faq__item">
+      <h3 class="landing-faq__q">프로젝트 진행 기간은 얼마나 걸리나요?</h3>
+      <p class="landing-faq__a">규모에 따라 다르지만 MVP 기준 4~8주 내 출시를 목표로 합니다. 상담 후 구체적인 일정을 제안드립니다.</p>
+    </div>
+    <div class="landing-faq__item">
+      <h3 class="landing-faq__q">어떤 기술 스택을 사용하나요?</h3>
+      <p class="landing-faq__a">프로젝트 목적에 따라 최적의 스택을 선정합니다. React / Next.js, Flutter, FastAPI, Django, AWS 등 검증된 기술을 활용합니다.</p>
+    </div>
+    <div class="landing-faq__item">
+      <h3 class="landing-faq__q">출시 후 유지보수도 가능한가요?</h3>
+      <p class="landing-faq__a">출시 후에도 지속적인 유지보수와 기능 추가를 지원합니다. 장기 파트너십을 환영합니다.</p>
+    </div>
+    <div class="landing-faq__item">
+      <h3 class="landing-faq__q">AI 기능을 기존 서비스에 붙일 수 있나요?</h3>
+      <p class="landing-faq__a">네, 기존 서비스에 LLM·AI API를 연동하는 작업도 진행합니다. 현재 서비스를 먼저 검토 후 최적 방안을 제안드립니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--cta" id="contact">
+  <h2 class="landing-section__title">함께 만들고 싶다면</h2>
+  <p class="landing-section__lead">프로젝트 문의·제안은 아래 링크로 연락 주세요.</p>
+  <a href="/about.html" class="landing-cta-button">회사 소개 및 연락처 →</a>
+</section>
+
+</div>
+
+      </div>
+    </main><footer class="site-footer site-footer--papa h-card">
+  <data class="u-url" href="/"></data>
+  <div class="wrapper">
+    <div class="site-footer-inner">
+      <div class="site-footer-brand">papaStudio</div>
+      <div>Copyright © papaStudio · papaStudio</div>
+      <div class="site-footer-desc">웹·앱 서비스 개발 · AI 연동 · IT 컨설팅</div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
