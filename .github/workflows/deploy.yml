@@ -1,4 +1,4 @@
-name: Deploy Jekyll to GitHub Pages
+name: Deploy redirect site to GitHub Pages
 
 on:
   push:
@@ -9,26 +9,15 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-
-      - name: Build Jekyll
-        run: bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
-
+      # Jekyll 빌드 없이 저장소 파일을 그대로 gh-pages 브랜치에 올립니다 (.github 폴더는 기본 제외)
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./
